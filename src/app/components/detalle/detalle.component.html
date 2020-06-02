@@ -1,0 +1,24 @@
+<div class="card mt-3" style="max-width: 540px;">
+    <div class="card-header">
+        <h1>{{pokemon.name | firstUpperCase}}</h1>
+    </div>
+    <div class="row no-gutters">
+        <div class="col-md-4 ">
+            <img [src]="pokemon.sprites.front_default" class="card-img img-fluid" [alt]="pokemon.name">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2>
+                    Moves
+                </h2>
+                <hr>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let move of moves" class="list-group-item list-group-item-action">
+                        {{move.move.name | firstUpperCase: true}}
+                    </li>
+                </ul>
+                <button [routerLink]="['/home']" type="button" class="btn btn-block btn-outline-danger">Go back</button>
+            </div>
+        </div>
+    </div>
+</div>

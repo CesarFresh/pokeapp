@@ -1,0 +1,26 @@
+<div class="table-responsive mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pokemon of pokemonArray">
+                <td class="align-middle">
+                    {{pokemon.id}}
+                </td>
+                <td class="align-middle">
+                    <img [src]="pokemon.sprites.front_default" class="img-fluid" alt="">
+                </td>
+                <td class="align-middle">{{pokemon.name | firstUpperCase:true}}</td>
+                <td class="align-middle">
+                    <button (click)="verDetalle(pokemon.id)" type="button" class="btn btn-block btn-outline-success"> Ver más...</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
